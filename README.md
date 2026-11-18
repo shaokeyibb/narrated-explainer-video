@@ -4,6 +4,7 @@
 <p align="center">知识 · 科普 · 课程 · 产品讲解</p>
 
 <p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-347b73?style=flat-square" alt="MIT License"></a>
   <a href="https://skills.sh/docs"><img src="https://img.shields.io/badge/install-skills.sh-151515?style=flat-square" alt="通过 skills.sh CLI 安装"></a>
   <a href="assets/starter/package.json"><img src="https://img.shields.io/badge/Node.js-22%2B-347b73?style=flat-square" alt="制作模板需要 Node.js 22 或以上"></a>
   <a href="scripts/new_project.py"><img src="https://img.shields.io/badge/Python-3.10%2B-775293?style=flat-square" alt="工具脚本需要 Python 3.10 或以上"></a>
@@ -40,7 +41,7 @@ npx skills add shaokeyibb/narrated-explainer-video
 npx skills add shaokeyibb/narrated-explainer-video --skill narrated-explainer-video -a codex -g
 ```
 
-仓库目前为私有，安装账号需要仓库访问权限。CLI 会使用已有的 Git、GitHub CLI 或 SSH 认证。CLI 当前要求 Node.js 22.20+。[安装选项与私有仓库说明](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)
+CLI 当前要求 Node.js 22.20+。[完整安装选项](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)
 
 安装后，可以直接这样开始：
 
@@ -160,3 +161,7 @@ README 中的图和动画来自随附模板。示例数据用于说明平均值�
 反馈问题时，请提供复现命令、操作系统、Node／Python／FFmpeg 版本，以及可共享的最小素材或截图。涉及播放问题时请附时间点。[提交问题](https://github.com/shaokeyibb/narrated-explainer-video/issues)
 
 </details>
+
+## 许可证
+
+本仓库原创代码、模板与文档以 [MIT License](LICENSE) 发布，版权所有 © 2026 HikariLan。随附第三方音乐分别适用 CC BY 4.0，Kenney 音效适用 CC0；使用这些素材时遵循其原许可和署名要求。[第三方素材许可](assets/sound/CREDITS.md)

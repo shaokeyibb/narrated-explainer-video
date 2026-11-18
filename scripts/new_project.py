@@ -16,6 +16,7 @@ destination.parent.mkdir(parents=True, exist_ok=True)
 with tempfile.TemporaryDirectory(dir=destination.parent) as temporary:
     staged = Path(temporary) / "project"
     shutil.copytree(assets / "starter", staged)
+    shutil.copy2(assets.parent / "LICENSE", staged / "LICENSE")
     shutil.copy2(assets / "project-brief.json", staged / "project-brief.json")
     shutil.copy2(assets / "storyboard.md", staged / "storyboard.md")
     if args.with_sound:
