@@ -1,0 +1,22 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>旁白图解预览</title><style>
+*{box-sizing:border-box}body{margin:0;background:#e6e3db;color:#302c39;font:16px system-ui,sans-serif}main{max-width:1250px;margin:auto;padding:20px}canvas{display:block;width:100%;height:auto}fieldset{border:0;padding:12px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}input[type=range]{flex:1;min-width:150px}button{font:inherit}output{font-variant-numeric:tabular-nums}
+</style><main><canvas width="1280" height="720" aria-label="旁白驱动的演示"></canvas>
+<fieldset><button type="button">播放</button><input id="seek" type="range" min="0" step=".001" aria-label="时间"><output></output>
+<label><input id="subs" type="checkbox">旁白字幕</label><label>载入剪后音轨 <input type="file" accept="audio/*"></label></fieldset></main>
+<script src="project.js"></script><script src="motion.js"></script><script src="film.js"></script><script>
+const ctx=document.querySelector('canvas').getContext('2d'), button=document.querySelector('button');
+const seek=document.querySelector('#seek'),subs=document.querySelector('#subs'),track=new Audio();
+let time=0,tick=0,base=0,running=false,url;
+seek.max=project.duration;
+function paint(){explainer.draw(ctx,time,subs.checked);seek.value=time;document.querySelector('output').textContent=time.toFixed(2)+' s';}
+function stop(){cancelAnimationFrame(tick);track.pause();running=false;button.textContent='播放';}
+function step(){time=Math.min(project.duration,url?track.currentTime:(performance.now()-base)/1000);paint();if(time>=project.duration||track.ended){stop();return;}tick=requestAnimationFrame(step);}
+button.onclick=async()=>{if(running){stop();return;}if(time>=project.duration-.001||track.ended)time=0;
+ if(url){try{track.currentTime=time;await track.play();}catch(error){document.querySelector('output').textContent=error.message;return;}}
+ base=performance.now()-time*1000;running=true;button.textContent='暂停';step();};
+seek.oninput=()=>{stop();time=Number(seek.value);if(url&&track.readyState)track.currentTime=time;paint();};
+subs.onchange=paint;
+document.querySelector('input[type=file]').onchange=e=>{if(!e.target.files.length)return;stop();if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(e.target.files[0]);track.src=url;time=0;paint();};
+paint();
+</script></html>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "旁白驱动的科普视频制作"
+  short_description: "把分章录音和逐字稿剪成有图解、字幕、配乐和审阅交付物的知识视频"
+  default_prompt: "用 $narrated-explainer-video 根据我的旁白、逐字稿和分章素材制作知识视频。"

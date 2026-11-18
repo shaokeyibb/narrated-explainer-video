@@ -1,0 +1,44 @@
+{
+  "topic": "",
+  "audience": "",
+  "viewerTakeaway": "",
+  "language": "zh-CN",
+  "inputs": {
+    "script": "",
+    "recordings": [],
+    "referenceImages": []
+  },
+  "decisions": {
+    "title": "",
+    "approvedStages": [],
+    "reviewMode": "follow-user-preference"
+  },
+  "picture": {
+    "style": "",
+    "presenter": "undecided",
+    "frameRate": null,
+    "aspectRatio": "",
+    "fontFiles": [],
+    "brandAssets": []
+  },
+  "captions": {
+    "appearance": "",
+    "correctionNotation": "undecided"
+  },
+  "pace": {
+    "maxStaticSeconds": null,
+    "maxStaticSentences": null,
+    "readingHoldNotes": ""
+  },
+  "sound": {
+    "musicDirection": "",
+    "loudnessTargetLUFS": null,
+    "licensedSources": []
+  },
+  "publishing": {
+    "platformsAndSurfaces": [],
+    "destination": "",
+    "visibility": "",
+    "authorization": ""
+  }
+}
